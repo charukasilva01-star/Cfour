@@ -504,3 +504,77 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 ::-webkit-scrollbar-thumb { background: var(--neutral-400); border-radius: 5px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--neutral-600); }
 ::selection { background: var(--primary-900); color: white; }
+
+
+/* ============================================
+   V5 PROFESSIONAL UPGRADES: Font Awesome & Mobile Optimization
+   ============================================ */
+i.fa-solid, i.fa-brands, i.fa-regular {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Icon hover micro-animations */
+button:hover i, a:hover i, .feature-card:hover i, .about-stat-card:hover i {
+  transform: scale(1.15);
+}
+
+/* Touch-friendly target sizing for mobile (Min 44x44px tap targets) */
+@media (max-width: 768px) {
+  .hero-nav-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+  }
+  .nav-icon-btn, .mobile-toggle {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .btn-primary, .btn-buy-now, .btn-checkout, .btn-whatsapp-order, .btn-call-order {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+  .announcement-inner {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 0.25rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .announcement-inner::-webkit-scrollbar {
+    display: none;
+  }
+  .announcement-item {
+    flex-shrink: 0;
+  }
+  .hero-trust-badges {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .trust-badge {
+    min-width: 140px;
+    justify-content: center;
+  }
+  .product-gallery {
+    position: static !important;
+  }
+  .gallery-main-wrapper {
+    aspect-ratio: 1 / 1;
+  }
+  .gallery-thumbs {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+  }
+}
+
+/* Ensure smooth image rendering and no CLS */
+img {
+  max-width: 100%;
+  height: auto;
+  content-visibility: auto;
+}
